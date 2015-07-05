@@ -11,7 +11,8 @@ Print Receipt! usage
 Print Receipt! is very simple to use. 
 
 - install a JDK 1.7 compatible 
-- double click on jar file
+- download the latest release of Print Receipt jar from [Releases](https://github.com/michelelazzeri/print-receipt/releases "Releases")
+- double click on jar file (or from command like `java -jar print-receipt-1.0.0.jar`)
 - select tab  `Price List ` 
 - compile, groups, product with prices and event days (optionally)
 - select printer you want to use ad the paper size
