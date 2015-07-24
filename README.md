@@ -12,7 +12,7 @@ billing and stock event
 
 ## Usage
 
-Print Receipt! is very simple to use.
+Print Receipt! is very simple to use. Watch the Video Tutorial:
 
 [![Watch the Video Tutorial](http://img.youtube.com/vi/SpaAheKS8d0/0.jpg)](http://www.youtube.com/watch?v=SpaAheKS8d0)
 
