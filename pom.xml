@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.printreceipt</groupId>
 	<artifactId>print-receipt</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<name>Print Receipt!</name>
 	<build>
 		<resources>
