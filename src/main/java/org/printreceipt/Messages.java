@@ -41,6 +41,7 @@ public class Messages {
 
 	static {
 		Locale locale = Locale.getDefault();
+		//Locale locale = Locale.ITALY;
 		log.debug("locale: {}", locale.getLanguage());
 		initResourceBundle(locale);
 	}

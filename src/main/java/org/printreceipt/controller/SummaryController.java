@@ -360,7 +360,7 @@ public class SummaryController implements ActionListener,
 			Map<BigInteger, Item> itemMap = new HashMap<BigInteger, Item>();
 
 			for (int i = 0; i < items.length; i++) {
-				itemMap.put(items[i].getId(), items[i]);
+				itemMap.put(BigInteger.valueOf(items[i].getId()), items[i]);
 			}
 			for (EventItemStatistics eventItemStatisctics : eventStatistics
 					.getItems_statistics()) {

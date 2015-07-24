@@ -39,14 +39,14 @@ public class ItemGroup implements java.io.Serializable {
 
 	private java.math.BigInteger ord;
 
-	private java.math.BigInteger id;
+	private long id;
 
 	public ItemGroup() {
 	}
 
 	public ItemGroup(java.lang.String name,
 			org.printreceipt.datamodel.Event event, java.math.BigInteger ord,
-			java.math.BigInteger id) {
+			long id) {
 		this.name = name;
 		this.event = event;
 		this.ord = ord;
@@ -112,7 +112,7 @@ public class ItemGroup implements java.io.Serializable {
 	 * 
 	 * @return id
 	 */
-	public java.math.BigInteger getId() {
+	public long getId() {
 		return id;
 	}
 
@@ -121,7 +121,7 @@ public class ItemGroup implements java.io.Serializable {
 	 * 
 	 * @param id
 	 */
-	public void setId(java.math.BigInteger id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 }

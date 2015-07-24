@@ -141,7 +141,7 @@ public class ReceiptController implements ActionListener, KeyListener {
 
 			// creo una albero ordinato di liste per gruppo
 			for (Item item : getItems()) {
-				BigInteger groupOrd = item.getItem_group().getId();
+				BigInteger groupOrd = BigInteger.valueOf(item.getItem_group().getId());
 				if (!itemsOrderedByGroupOrd.containsKey(groupOrd)) {
 					itemsOrderedByGroupOrd.put(groupOrd, new ArrayList<Item>());
 				}
@@ -186,7 +186,7 @@ public class ReceiptController implements ActionListener, KeyListener {
 					Item item = itemsOrderedByGroupOrd.get(groupOrd).get(i);
 					int pos = getItems().indexOf(item);
 					groupName = item.getItem_group().getName();
-					itemGroupId = item.getItem_group().getId();
+					itemGroupId = BigInteger.valueOf(item.getItem_group().getId());
 					Long qty = (Long) getQtys()[pos].getValue();
 					if (qty != null && qty > 0) {
 						sb.append("<tr>");

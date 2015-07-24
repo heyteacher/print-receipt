@@ -37,13 +37,13 @@ public class EventDay implements java.io.Serializable {
 
 	private java.util.Calendar start_date;
 
-	private java.math.BigInteger id;
+	private long id;
 
 	public EventDay() {
 	}
 
 	public EventDay(java.util.Calendar end_date, java.util.Calendar start_date,
-			java.math.BigInteger id) {
+			long id) {
 		this.end_date = end_date;
 		this.start_date = start_date;
 		this.id = id;
@@ -90,7 +90,7 @@ public class EventDay implements java.io.Serializable {
 	 * 
 	 * @return id
 	 */
-	public java.math.BigInteger getId() {
+	public long getId() {
 		return id;
 	}
 
@@ -99,7 +99,7 @@ public class EventDay implements java.io.Serializable {
 	 * 
 	 * @param id
 	 */
-	public void setId(java.math.BigInteger id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 }

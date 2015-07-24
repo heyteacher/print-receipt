@@ -81,7 +81,7 @@ public class HsqlReceiptManagerImpl implements ReceiptManager {
 							.getConnection()
 							.prepareStatement(
 									"INSERT INTO ecb_receiptitem (item_id, receipt_id, quantity) VALUES (?,?,?) ");
-					pstm.setInt(1, receiptItem.getItem().getId().intValue());
+					pstm.setLong(1, receiptItem.getItem().getId());
 					pstm.setInt(2, receiptId.intValue());
 					pstm.setDouble(3, receiptItem.getQuantity());
 					pstm.executeUpdate();

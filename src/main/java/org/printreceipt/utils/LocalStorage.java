@@ -151,7 +151,7 @@ public class LocalStorage {
 	public static void storeItems(Item[] items) throws AppException {
 		remove(Item.class.getSimpleName());
 		for (Item item : items) {
-			store(Item.class.getSimpleName(), item.getId().longValue(), item);
+			store(Item.class.getSimpleName(), item.getId(), item);
 		}
 	}
 

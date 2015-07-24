@@ -20,24 +20,28 @@
 
 package org.printreceipt.utils;
 
-import java.math.BigInteger;
 
 public class ConfigureTableRow {
 
-	private BigInteger key;
+	private long key;
 	private Object[] values;
 
 	public ConfigureTableRow(int columnsCount) {
+		this.key = Math.round(Math.random() * -1000000);
 		this.values = new Object[columnsCount];
 	}
 
-	public ConfigureTableRow(BigInteger key, Object[] values) {
+	public ConfigureTableRow(long key, Object[] values) {
 		this.key = key;
 		this.values = values;
 	}
 
-	public BigInteger getKey() {
+	public long getKey() {
 		return key;
+	}
+
+	public void setKey(long key) {
+		this.key = key;
 	}
 
 	public Object[] getValues() {
@@ -66,9 +70,5 @@ public class ConfigureTableRow {
 		}
 		return sb.toString();
 
-	}
-
-	public void setKey(BigInteger itemGroupId) {
-		key = itemGroupId;
 	}
 }

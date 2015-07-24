@@ -248,9 +248,12 @@ public class MenuController implements ActionListener, PropertyChangeListener {
 						.doubleValue());
 			}
 			ValueBean valueBean = (ValueBean) tableRows.get(i).getValue(2);
-			if (valueBean != null && valueBean.getId() != null) {
+			if (valueBean != null && valueBean.getDescr() != null) {
 				ItemGroup itemGroup = new ItemGroup();
-				itemGroup.setId(new BigInteger("" + valueBean.getId()));
+				itemGroup.setName(valueBean.getDescr());
+				if ( valueBean.getId() != null) {
+					itemGroup.setId(new BigInteger("" + valueBean.getId()).longValue());
+				}
 				object.setItem_group(itemGroup);
 			}
 			object.setHide((Boolean) tableRows.get(i).getValue(3) == true);
@@ -288,8 +291,7 @@ public class MenuController implements ActionListener, PropertyChangeListener {
 			Object[] values = new Object[2];
 			values[0] = itemGroups[i].getName();
 			values[1] = false;
-			tablePanel.addRow(new ConfigureTableRow(itemGroups[i].getId(),
-					values));
+			tablePanel.addRow(new ConfigureTableRow(itemGroups[i].getId(),values));
 		}
 		return getItemGroupsValueBeans(itemGroups);
 	}
@@ -324,12 +326,12 @@ public class MenuController implements ActionListener, PropertyChangeListener {
 			if (itemView.getItemGroupPanel() == source) {
 				List<ValueBean> values = new ArrayList<ValueBean>();
 				for (ConfigureTableRow tableRow : source.getTableData()) {
-					if (tableRow.getKey() == null) {
+					if (tableRow.getKey() <= 0) {
 						BigInteger itemGroupId = ModelManager.getECBManager()
 								.createItemGroup(
 										getItemGroup(tableRow,
 												tableRow.getValues().length));
-						tableRow.setKey(itemGroupId);
+						tableRow.setKey(itemGroupId.longValue());
 					}
 					values.add(new ValueBean(tableRow.getKey(),
 							(String) tableRow.getValue(0)));

@@ -43,7 +43,7 @@ public class Item implements java.io.Serializable {
 
 	private java.math.BigInteger ord;
 
-	private java.math.BigInteger id;
+	private long id;
 
 	public Item() {
 	}
@@ -51,7 +51,7 @@ public class Item implements java.io.Serializable {
 	public Item(java.lang.Boolean hide, java.lang.String name,
 			java.lang.Double price,
 			org.printreceipt.datamodel.ItemGroup item_group,
-			java.math.BigInteger ord, java.math.BigInteger id) {
+			java.math.BigInteger ord, long id) {
 		this.hide = hide;
 		this.name = name;
 		this.price = price;
@@ -155,7 +155,7 @@ public class Item implements java.io.Serializable {
 	 * 
 	 * @return id
 	 */
-	public java.math.BigInteger getId() {
+	public long getId() {
 		return id;
 	}
 
@@ -164,7 +164,7 @@ public class Item implements java.io.Serializable {
 	 * 
 	 * @param id
 	 */
-	public void setId(java.math.BigInteger id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 }

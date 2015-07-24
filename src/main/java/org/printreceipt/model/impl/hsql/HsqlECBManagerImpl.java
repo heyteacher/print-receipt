@@ -71,7 +71,7 @@ public class HsqlECBManagerImpl implements ECBManager {
 							+ event_id + "' ORDER BY start_date");
 			ArrayList<EventDay> eventDays = new ArrayList<EventDay>();
 			while (resultSet.next()) {
-				BigInteger id = BigInteger.valueOf(resultSet.getInt("id"));
+				long id = resultSet.getLong("id");
 				Calendar start_date = Calendar.getInstance();
 				start_date.setTime(resultSet.getDate("start_date"));
 				Calendar end_date = Calendar.getInstance();
@@ -109,7 +109,7 @@ public class HsqlECBManagerImpl implements ECBManager {
 
 			PreparedStatement pstmt = HsqlModelFactory.getConnection()
 					.prepareStatement(query);
-			pstmt.setInt(1, eventDay.getId().intValue());
+			pstmt.setLong(1, eventDay.getId());
 			ResultSet resultSet = pstmt.executeQuery();
 			if (resultSet.next()) {
 				eventStatistics.setAmount(resultSet.getDouble("amount"));
@@ -131,7 +131,7 @@ public class HsqlECBManagerImpl implements ECBManager {
 					+ " GROUP BY i.id, i.name, ig.ord, i.ord "
 					+ " ORDER BY ig.ord, i.ord";
 			pstmt = HsqlModelFactory.getConnection().prepareStatement(query);
-			pstmt.setInt(1, eventDay.getId().intValue());
+			pstmt.setLong(1, eventDay.getId());
 			resultSet = pstmt.executeQuery();
 
 			ArrayList<EventItemStatistics> eventItemStatistics = new ArrayList<EventItemStatistics>();
@@ -154,7 +154,7 @@ public class HsqlECBManagerImpl implements ECBManager {
 					+ " WHERE ecb_cashoperation.event_id = ? "
 					+ " AND ecb_cashoperation.reg_date BETWEEN ed.start_date AND ed.end_date";
 			pstmt = HsqlModelFactory.getConnection().prepareStatement(query);
-			pstmt.setInt(1, eventDay.getId().intValue());
+			pstmt.setLong(1, eventDay.getId());
 			resultSet = pstmt.executeQuery();
 
 			ArrayList<CashOperation> cashOperations = new ArrayList<CashOperation>();
@@ -279,14 +279,13 @@ public class HsqlECBManagerImpl implements ECBManager {
 
 			ArrayList<Item> items = new ArrayList<Item>();
 			while (resultSet.next()) {
-				BigInteger id = BigInteger.valueOf(resultSet.getInt("id"));
+				long id = resultSet.getLong("id");
 				String name = resultSet.getString("name");
 				Double price = resultSet.getDouble("price");
 				Boolean hide = resultSet.getBoolean("hide");
 				BigInteger ord = BigInteger.valueOf(resultSet.getInt("ord"));
 
-				BigInteger ig_id = BigInteger.valueOf(resultSet
-						.getInt("item_group_id"));
+				long ig_id = resultSet.getLong("item_group_id");
 				String ig_name = resultSet.getString("item_group_name");
 				BigInteger ig_ord = BigInteger.valueOf(resultSet
 						.getInt("item_group_ord"));
@@ -321,7 +320,7 @@ public class HsqlECBManagerImpl implements ECBManager {
 
 			ArrayList<ItemGroup> itemGroups = new ArrayList<ItemGroup>();
 			while (resultSet.next()) {
-				BigInteger id = BigInteger.valueOf(resultSet.getInt("id"));
+				long id = resultSet.getLong("id");
 				String name = resultSet.getString("name");
 				BigInteger ord = BigInteger.valueOf(resultSet.getInt("ord"));
 
@@ -344,7 +343,7 @@ public class HsqlECBManagerImpl implements ECBManager {
 		try {
 			HsqlModelFactory.setAutoCommit(false);
 			saveEventDays(event, eventDays);
-			Map<String, BigInteger> itemGroupSaved = saveItemGroups(event, itemGroups, user);
+			Map<String, Long> itemGroupSaved = saveItemGroups(event, itemGroups, user);
 			saveItems(event, items, itemGroupSaved, user);
 			HsqlModelFactory.commit();
 		} catch (Exception e) {
@@ -390,8 +389,8 @@ public class HsqlECBManagerImpl implements ECBManager {
 					throw new AppException(
 							"Event day start date cannot be before end date");
 				}
-				eventDay.getStart_date().add(Calendar.HOUR, 12);
-				eventDay.getEnd_date().add(Calendar.HOUR, 12);
+				eventDay.getStart_date().add(Calendar.HOUR, 10);
+				eventDay.getEnd_date().add(Calendar.HOUR, 10);
 
 				preparedStatement = HsqlModelFactory
 						.getConnection()
@@ -414,21 +413,21 @@ public class HsqlECBManagerImpl implements ECBManager {
 		}
 	}
 
-	public Map<String, BigInteger> saveItemGroups(Event event, ItemGroup[] itemGroups, User user)
+	public Map<String, Long> saveItemGroups(Event event, ItemGroup[] itemGroups, User user)
 			throws SQLException, ClassNotFoundException, AppException {
 
 		try {
 			//HsqlModelFactory.setAutoCommit(false);
 			PreparedStatement preparedStatement = null;
 
-			Map<String, BigInteger> itemsGroupSaved = new HashMap<String, BigInteger>();
+			Map<String, Long> itemsGroupSaved = new HashMap<String, Long>();
 
 			for (int i = 0; i < itemGroups.length; i++) {
 				if (itemGroups[i].getName() == null
 						|| "".equals(itemGroups[i].getName().trim())) {
 					throw new AppException("Item group name cannot be empty");
 				}
-				if (itemGroups[i].getId() == null) {
+				if (itemGroups[i].getId() <= 0) {
 					preparedStatement = HsqlModelFactory
 							.getConnection()
 							.prepareStatement(
@@ -439,16 +438,15 @@ public class HsqlECBManagerImpl implements ECBManager {
 							.getConnection()
 							.prepareStatement(
 									"UPDATE ecb_itemgroup SET name = ?, ord = ? WHERE id = ?");
-					preparedStatement.setInt(3, itemGroups[i].getId()
-							.intValue());
+					preparedStatement.setLong(3, itemGroups[i].getId());
 					itemsGroupSaved.put(itemGroups[i].getName(), itemGroups[i].getId());
 				}
 				preparedStatement.setString(1, itemGroups[i].getName());
 				preparedStatement.setInt(2, i);
 				preparedStatement.executeUpdate();
-				if (itemGroups[i].getId() == null) {
-					itemGroups[i].setId(HsqlModelFactory.lastIdentity());
-					itemsGroupSaved.put(itemGroups[i].getName(), HsqlModelFactory.lastIdentity());
+				if (itemGroups[i].getId() <= 0) {
+					itemGroups[i].setId(HsqlModelFactory.lastIdentity().longValue());
+					itemsGroupSaved.put(itemGroups[i].getName(), HsqlModelFactory.lastIdentity().longValue());
 				}
 				preparedStatement.close();
 			}
@@ -459,7 +457,7 @@ public class HsqlECBManagerImpl implements ECBManager {
 					preparedStatement = HsqlModelFactory.getConnection()
 							.prepareStatement(
 									"DELETE FROM ecb_itemgroup WHERE id = ?");
-					preparedStatement.setInt(1, oldItemGroups[i].getId().intValue());
+					preparedStatement.setLong(1, oldItemGroups[i].getId());
 					preparedStatement.executeUpdate();
 					preparedStatement.close();
 				}
@@ -477,7 +475,7 @@ public class HsqlECBManagerImpl implements ECBManager {
 	public void saveItems(
 			Event event, 
 			Item[] items, 
-			Map<String, BigInteger> itemGroupSaved,
+			Map<String, Long> itemGroupSaved,
 			User user)
 			throws SQLException, ClassNotFoundException, AppException {
 
@@ -485,7 +483,7 @@ public class HsqlECBManagerImpl implements ECBManager {
 			//HsqlModelFactory.setAutoCommit(false);
 			PreparedStatement preparedStatement = null;
 
-			Set<BigInteger> itemsSaved = new HashSet<BigInteger>();
+			Set<Long> itemsSaved = new HashSet<Long>();
 
 			for (int i = 0; i < items.length; i++) {
 				if (items[i].getName() == null
@@ -493,16 +491,16 @@ public class HsqlECBManagerImpl implements ECBManager {
 					throw new AppException("Item name cannot by empty");
 				}
 				if (items[i].getItem_group() != null) {
-						if (items[i].getItem_group().getId() == null) {
+						if (items[i].getItem_group().getId() <= 0) {
 							items[i].getItem_group().setId(
 									itemGroupSaved.get(items[i].getItem_group().getName()));
 						}
 				}
-				if (items[i].getItem_group() == null || items[i].getItem_group().getId() == null) {
+				if (items[i].getItem_group() == null || items[i].getItem_group().getId() <= 0) {
 					throw new AppException("Items group cannot by empty");
 				}
 
-				if (items[i].getId() == null) {
+				if (items[i].getId() <= 0) {
 					preparedStatement = HsqlModelFactory
 							.getConnection()
 							.prepareStatement(
@@ -515,17 +513,17 @@ public class HsqlECBManagerImpl implements ECBManager {
 				}
 				preparedStatement.setString(1, items[i].getName());
 				preparedStatement.setInt(2, i);
-				preparedStatement.setInt(3, items[i].getItem_group().getId().intValue());
+				preparedStatement.setLong(3, items[i].getItem_group().getId());
 				preparedStatement.setDouble(4, items[i].getPrice());
 				preparedStatement.setInt(5, items[i].getHide() ? 1 : 0);
-				if (items[i].getId() != null) {
-					preparedStatement.setInt(6, items[i].getId().intValue());
+				if (items[i].getId() > 0) {
+					preparedStatement.setLong(6, items[i].getId());
 					itemsSaved.add(items[i].getId());
 				}
 				preparedStatement.executeUpdate();
-				if (items[i].getId() == null) {
-					items[i].setId(HsqlModelFactory.lastIdentity());
-					itemsSaved.add(HsqlModelFactory.lastIdentity());
+				if (items[i].getId() <= 0) {
+					items[i].setId(HsqlModelFactory.lastIdentity().longValue());
+					itemsSaved.add(HsqlModelFactory.lastIdentity().longValue());
 				}
 				preparedStatement.close();
 			}
@@ -536,7 +534,7 @@ public class HsqlECBManagerImpl implements ECBManager {
 					preparedStatement = HsqlModelFactory.getConnection()
 							.prepareStatement(
 									"DELETE FROM ecb_item WHERE id = ?");
-					preparedStatement.setInt(1, oldItems[i].getId().intValue());
+					preparedStatement.setLong(1, oldItems[i].getId());
 					preparedStatement.executeUpdate();
 					preparedStatement.close();
 				}

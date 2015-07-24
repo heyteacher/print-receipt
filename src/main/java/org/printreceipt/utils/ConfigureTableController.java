@@ -81,7 +81,7 @@ public class ConfigureTableController implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		ConfigureTableView eventDayPanel = (ConfigureTableView) view;
+		ConfigureTableView configureTableView = (ConfigureTableView) view;
 		String actionCommand = e.getActionCommand();
 		try {
 			// if (actionCommand.startsWith(DELETE_ACTION_COMMAND)) {
@@ -97,7 +97,7 @@ public class ConfigureTableController implements ActionListener {
 			// .substring(MOVE_UP_ACTION_COMMAND.length() + 1)));
 			// eventDayPanel.firePropertyChange("updateTable", 0, MOVE_ROW);
 			if (actionCommand.startsWith(ADD_ACTION_COMMAND)) {
-				eventDayPanel.addRow();
+				configureTableView.addRow();
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
