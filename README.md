@@ -14,12 +14,11 @@ billing and stock event
 
 Print Receipt! is very simple to use.
 
-![Watch the Video Tutorial](https://youtu.be/SpaAheKS8d0/0.jpg)
+[![Watch the Video Tutorial](http://img.youtube.com/vi/SpaAheKS8d0/0.jpg)](http://www.youtube.com/watch?v=SpaAheKS8d0)
 
 ## Printer tested
 
 * Epson TM-T81
-* bla bla 
 
 ## Contribution
 
@@ -27,7 +26,7 @@ Print Receipt Support English and Italian language. You can pull request transla
 
 ## Roadmap
 
-* migrate to 
+* TODO
 
    
 
