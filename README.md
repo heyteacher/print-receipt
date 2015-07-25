@@ -8,6 +8,10 @@ event billing and stock
 
 ## Usage
 
+1. Download and install [Java](https://java.com/en/download/)
+1. [Download latest release](https://github.com/michelelazzeri/print-receipt/releases/latest)
+3. Double click on jar file
+
 Print Receipt! is very simple to use. Watch the Video Tutorial:
 
 [![Watch the Video Tutorial](http://img.youtube.com/vi/SpaAheKS8d0/0.jpg)](http://www.youtube.com/watch?v=SpaAheKS8d0)
