@@ -214,7 +214,7 @@ public class HsqlModelFactory implements ModelFactory {
 
 				statement.executeUpdate("INSERT INTO ecb_itemgroup "
 						+ "(id, ord, name, event_id) VALUES "
-						+ "	(1, 1, '" + Messages.getString("Group") + " 1', 1)");
+						+ "	(1, 1, '" + Messages.getString("Stand") + " 1', 1)");
 
 				statement
 						.executeUpdate("INSERT INTO ecb_item "

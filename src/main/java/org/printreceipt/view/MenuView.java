@@ -277,11 +277,11 @@ public class MenuView extends RowsPanel {
 
 		names = new ArrayList<String>();
 		types = new ArrayList<Object>();
-		names.add("Group");
+		names.add("Stand");
 		types.add(String.class);
 
 		this.itemGroupConfigureTableView = new ConfigureTableView(
-				"Item Groups", names, types, this.getApplication());
+				"Stands", names, types, this.getApplication());
 		List<ValueBean> itemGroups = controller
 				.loadItemGroups(itemGroupConfigureTableView);
 		mainPanel.add(itemGroupConfigureTableView);
@@ -290,7 +290,7 @@ public class MenuView extends RowsPanel {
 		types = new ArrayList<Object>();
 		names.add("Item");
 		names.add("Price");
-		names.add("Group");
+		names.add("Stand");
 		names.add("Hide");
 		types.add(String.class);
 		types.add(Double.class);

@@ -297,7 +297,7 @@ public class ReceiptController implements ActionListener, KeyListener {
 		sb.append(" </tr>");
 		sb.append(" <tr>");
 		sb.append("  <td style='text-align: right;'>");
-		sb.append(Messages.getString("Group") + ": ");
+		sb.append(Messages.getString("Stand") + ": ");
 		sb.append("  </td>");
 		sb.append("  <th>");
 		sb.append(itemGroupName);
