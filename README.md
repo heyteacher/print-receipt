@@ -3,7 +3,7 @@
 Print Receipt! is a POS application for print receipt and manage 
 event billing and stock    
 
-* Run anywhere (require a Java runtime[see Requirements](#Requirement))
+* Run anywhere (require a Java runtime [see Requirements](#Requirement))
 * Support any king of printer recognized by your PC (there are some [Tested Printer](#TestedOrinter)) 
 
 ## Usage
