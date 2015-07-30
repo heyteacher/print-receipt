@@ -7,20 +7,30 @@ body {
   color: #5a5a5a;
 }
 
+ol li {
+	padding-bottom: 5px;
+}
+a, a:VISITED, a:HOVER {
+	color: #978e43;
+	font-weight: bold;
+}
+
 .btn-primary {
 	background: #ffff99;
 	color: #5a5a5a;
 	border-color: #5a5a5a;
+	margin-bottom: 5px;
+}
+
+.btn-primary:HOVER {
+	color: #ffff99;
+	background: #5a5a5a;
 }
 
 iframe {
 	border-color: #5a5a5a;
 	border-style: solid;
 	border-width: 1px;
-}
-
-.marketing {
-	text-align: center;
 }
 
 #fork-on-github img {
@@ -43,7 +53,7 @@ iframe {
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
   z-index: 10;
-  color: #222;
+  color: #5a5a5a;
 }
 
 /* Declare heights because of positioning of img element */

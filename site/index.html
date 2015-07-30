@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Print Receipt, opensource PoS Application">
+    <meta name="description" content="Print Receipt, an open source PoS Application and bill management for thermal printers">
     <meta name="author" content="Michele Lazzeri">
     <link rel="icon" href="favicon.ico">
 
@@ -12,6 +12,8 @@
 
     <!-- Bootstrap core CSS -->
     <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+	<link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
     <script src="assets/bootstrap/js/ie-emulation-modes-warning.js"></script>
 
@@ -32,8 +34,11 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', function(event) {
-        cookieChoices.showCookieConsentBar('This website uses cookies to ensure you get the best experience on our website.',
-          'ACCEPT', 'MORE INFO', '#privacyModal');
+        cookieChoices.showCookieConsentBar(
+        		'This website uses cookies to ensure you get the best experience on our website.',
+          		'ACCEPT', 
+          		'MORE INFO', 
+          		'#privacyModal');
       });
     </script>
 
@@ -102,23 +107,34 @@
       <div class="row">
         <div class="col-lg-4">
           <h2>Getting Started</h2>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Install Java Runtime</a></p>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Download Latest Release</a></p>
+          <ol>
+           <li>Install a Java Runtime:  <a href="https://java.com/en/download/" target="_blank">Oracle Java</a> or <a href="http://openjdk.java.net/install/" target="_blank">OpenJDK</a></li>
+           <li>Download print-receipt <a href="https://github.com/michelelazzeri/print-receipt/releases/latest"  target="_blank">Latest Release</a> jar file</li>
+           <li>Double click on jar file (or <em>Open with...</em> Java Runtime)</li>
+          </ol> 
         </div>
         <div class="col-lg-4">
           <iframe width="100%" height="300px" src="https://www.youtube.com/embed/SpaAheKS8d0" allowfullscreen></iframe>
         </div>
         <div class="col-lg-4">
-          <h2>Tested Printers</h2>
-          <p><a href="#">Epson TM-T81</a></p>
-          <p><a href="#">USB POS Bill Printer Mini</a> (without cutter)</p>
+          <h2>Termal Printers</h2>
+          <p>We test print-receipt on these printers:</p>
+          <ul>
+           <li><a href="http://www.ebay.com/sch/?_nkw=Epson+TM-T81" target="_blank">Epson TM-T81</a> Best Choice </li>
+           <li><a href="http://www.ebay.com/sch/?_nkw=USB+POS+Bill+Printer+Mini" target="_blank">USB POS Bill Printer Mini</a> missing automatic cutter</li>
+          </ul>
+          <p>These printers <strong>should</strong> be supported:</p>
+          <ul>
+           <li><a href="http://www.ebay.com/sch/i.html?_nkw=star+tsp600+usb" target="_blank">Star Micronics TSP600</a></li>
+           <li><a href="http://www.ebay.com/sch/i.html?_nkw=samsung+srp-350+usb" target="_blank">Bixolon Samsung SRP-350II USB </a></li>
+          <ul>
         </div>
       </div><!-- /.row -->
 
 
       <!-- FOOTER -->
       <footer>
-        <p class="pull-right">&copy; 2015 Michele Lazzeri</p>
+        <p class="text-center">Code licensed under <a href="https://github.com/michelelazzeri/print-receipt/master/COPYNG.txt" target="_blank">GPL v.3</a>. &copy; 2015 Michele Lazzeri <a href="http://twitter.com/michelelazzeri" target="_blank"><i class="fa fa-3x fa-twitter-square"></i></a></p>
       </footer>
 
     </div><!-- /.container -->
@@ -132,10 +148,10 @@
 			<h4 class="modal-title" id="myModalLabel">Privacy Policy</h4>
 		  </div>
 		  <div class="modal-body">
-<p>We collect anonymous statistics about your visit, like which of our pages you viewed.</p>
-<p>We measure visitors to our website using Google Analytics. This records what pages you view within our site, how you arrived at our site and some basic information about your computer. All of that information is anonymous – so we don’t know who you are; just that <em>somebody </em>visited our site.</p>
-<p>The information we collect from analytics helps us understand what parts of our sites are doing well, how people arrive at our site and so on. Like most websites, we use this information to make our website better.</p>
-<p>You can learn more about <a title="Google Analytics' privacy policy" href="http://www.google.com/analytics/learn/privacy.html">Google Analytics</a> or <a title="How to opt out of google analytics" href="https://tools.google.com/dlpage/gaoptout">opt out if you wish</a>.</p>
+			<p>We collect anonymous statistics about your visit, like which of our pages you viewed.</p>
+			<p>We measure visitors to our website using Google Analytics. This records what pages you view within our site, how you arrived at our site and some basic information about your computer. All of that information is anonymous – so we don’t know who you are; just that <em>somebody </em>visited our site.</p>
+			<p>The information we collect from analytics helps us understand what parts of our sites are doing well, how people arrive at our site and so on. Like most websites, we use this information to make our website better.</p>
+			<p>You can learn more about <a title="Google Analytics' privacy policy" href="http://www.google.com/analytics/learn/privacy.html">Google Analytics</a> or <a title="How to opt out of google analytics" href="https://tools.google.com/dlpage/gaoptout">opt out if you wish</a>.</p>
 		  </div>
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -150,7 +166,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="assets/jquery/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-        <!--PRIVACY COOKIES-->
+    <!--PRIVACY COOKIES-->
     <script src="assets/js/cookiechoices.js"></script>
     <!--PRIVACY-->
     
