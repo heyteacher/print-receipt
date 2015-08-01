@@ -31,10 +31,10 @@ print-receipt is tested on this products
 
 You can contribute in many ways:
 
-* if you find a bug, [create a issue](/michelelazzeri/print-receipt/issues/new) 
+* test a new printer for example:
+  * [Star Micronics TSP600](https://www.google.it/?ie=UTF-8#q=star+tsp600+usb)
+  * [Bixolon Samsung SRP-350II USB](https://www.google.it/?ie=UTF-8#q=samsung+srp-350+usb)
+
+* if you find a bug or suggest new features, [create a issue](https://github.com/michelelazzeri/print-receipt/issues/new) 
+
 * add a translation starting from [messages template](https://github.com/michelelazzeri/print-receipt/blob/master/src/main/java/org/printreceipt/messages_lang.properties)
-* test a new printer
-
-
-   
-
