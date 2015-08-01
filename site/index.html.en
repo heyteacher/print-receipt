@@ -11,9 +11,9 @@
     <title>Print Receipt</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-	<link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+      
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
     <script src="assets/bootstrap/js/ie-emulation-modes-warning.js"></script>
 
@@ -57,37 +57,37 @@
       </ol>
       <div class="carousel-inner">
         <div class="item active">
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAAHncGNIAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wccFQwLptnHcgAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAAMSURBVAjXYzhzZiYABJkCMlngnt0AAAAASUVORK5CYII=" alt="print receipt">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAAHncGNIAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wccFQwLptnHcgAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAAMSURBVAjXYzhzZiYABJkCMlngnt0AAAAASUVORK5CYII=" alt="Print Receipt">
           <div class="container">
             <div class="carousel-caption">
               <h1>Print Receipt</h1>
               <p>
                An Open Source PoS Application for print receipt, easy to use<br/>
-               <img src="img/receipts.png" alt="print receipt" />
+               <img src="img/receipts.png" alt="Print Receipt" />
               </p>
             </div>
           </div>
         </div>
         <div class="item">
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAAHncGNIAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wccFQwLptnHcgAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAAMSURBVAjXYzhzZiYABJkCMlngnt0AAAAASUVORK5CYII=" alt="print receipt">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAAHncGNIAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wccFQwLptnHcgAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAAMSURBVAjXYzhzZiYABJkCMlngnt0AAAAASUVORK5CYII=" alt="Print Receipt">
           <div class="container">
            <div class="carousel-caption">
             <h1>Run anywhere</h1>
              <p>
-              Print Receipt is a Java Swing application so you need only to install Java Runtime<br/>
-              <img src="img/print-receipt.png" alt="print receipt" />
+              <strong>Print Receipt</strong> is a Java Swing application so you need only to install Java Runtime<br/>
+              <img src="img/print-receipt.png" alt="Print Receipt" />
              </p>
             </div>
 	      </div>
         </div>
         <div class="item">
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAAHncGNIAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wccFQwLptnHcgAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAAMSURBVAjXYzhzZiYABJkCMlngnt0AAAAASUVORK5CYII=" alt="print receipt">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAAHncGNIAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wccFQwLptnHcgAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAAMSURBVAjXYzhzZiYABJkCMlngnt0AAAAASUVORK5CYII=" alt="Print Receipt">
           <div class="container">
             <div class="carousel-caption">
               <h1>Support any kind of printer.</h1>
               <p>
-               You can print receipt in any printer configured in your PC<br/>
-               <img src="img/TM-T81.png" alt="print receipt" />
+               You can <strong>Print Receipt</strong> in any printer configured in your PC<br/>
+               <img src="img/TM-T81.png" alt="Print Receipt" />
               </p>
             </div>
           </div>
@@ -109,7 +109,7 @@
           <h2>Getting Started</h2>
           <ol>
            <li>Install a Java Runtime:  <a href="https://java.com/en/download/" target="_blank">Oracle Java</a> or <a href="http://openjdk.java.net/install/" target="_blank">OpenJDK</a></li>
-           <li>Download print-receipt <a href="https://github.com/michelelazzeri/print-receipt/releases/latest"  target="_blank">Latest Release</a> jar file</li>
+           <li>Download <strong>Print Receipt</strong> <a href="https://github.com/michelelazzeri/print-receipt/releases/latest"  target="_blank">Latest Release</a> jar file</li>
            <li>Double click on jar file (or <em>Open with...</em> Java Runtime)</li>
           </ol> 
         </div>
@@ -117,8 +117,8 @@
           <iframe width="100%" height="300px" src="https://www.youtube.com/embed/SpaAheKS8d0" allowfullscreen></iframe>
         </div>
         <div class="col-lg-4">
-          <h2>Termal Printers</h2>
-          <p>We test print-receipt on these printers:</p>
+          <h2>Thermal Printers</h2>
+          <p>We test <strong>Print Receipt</strong> on these printers:</p>
           <ul>
            <li><a href="http://www.ebay.com/sch/?_nkw=Epson+TM-T81" target="_blank">Epson TM-T81</a> Best Choice </li>
            <li><a href="http://www.ebay.com/sch/?_nkw=USB+POS+Bill+Printer+Mini" target="_blank">USB POS Bill Printer Mini</a> missing automatic cutter</li>
@@ -164,8 +164,8 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/jquery/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <!--PRIVACY COOKIES-->
     <script src="assets/js/cookiechoices.js"></script>
     <!--PRIVACY-->
