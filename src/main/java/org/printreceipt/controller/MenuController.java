@@ -54,7 +54,7 @@ import org.slf4j.LoggerFactory;
 
 public class MenuController implements ActionListener, PropertyChangeListener {
 
-	private MenuView itemView;
+	private MenuView menuView;
 	private Application application;
 	public static final String ACT_SAVE = "save";
 	public static final String ACT_IMPORT = "import";
@@ -66,16 +66,16 @@ public class MenuController implements ActionListener, PropertyChangeListener {
 	private static Logger log = LoggerFactory.getLogger(MenuController.class);
 
 	public MenuController(Application application, MenuView itemView) {
-		this.itemView = itemView;
+		this.menuView = itemView;
 		this.application = application;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent ae) {
 		try {
-			this.itemView.getItemGroupPanel().stopEditing();
-			this.itemView.getItemPanel().stopEditing();
-			this.itemView.getEventDayPanel().stopEditing();
+			this.menuView.getItemGroupPanel().stopEditing();
+			this.menuView.getItemPanel().stopEditing();
+			this.menuView.getEventDayPanel().stopEditing();
 
 			String act = ae.getActionCommand();
 			if (ACT_SAVE.equals(act)) {
@@ -141,7 +141,7 @@ public class MenuController implements ActionListener, PropertyChangeListener {
 	private void exportEvent() throws AppException {
 		JFileChooser fileChooser = new JFileChooser();
 		fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-		int ret = fileChooser.showSaveDialog(itemView);
+		int ret = fileChooser.showSaveDialog(menuView);
 		if (ret == JFileChooser.APPROVE_OPTION) {
 			File dialogDirectory = fileChooser.getSelectedFile();
 			DateFormat sdfDayMR = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
@@ -170,7 +170,7 @@ public class MenuController implements ActionListener, PropertyChangeListener {
 				return f.isDirectory() || f.getName().endsWith(".ecb");
 			}
 		});
-		int ret = fileChooser.showOpenDialog(itemView);
+		int ret = fileChooser.showOpenDialog(menuView);
 		if (ret == JFileChooser.APPROVE_OPTION) {
 			File dialogFile = fileChooser.getSelectedFile();
 			ModelManager.getECBManager().importEvent(dialogFile);
@@ -182,12 +182,12 @@ public class MenuController implements ActionListener, PropertyChangeListener {
 	}
 
 	private void save() throws AppException {
-		String eventName = itemView.getReceiptHeaderComponent().getText();
+		String eventName = menuView.getReceiptHeaderComponent().getText();
 		application.getEvent().setName(eventName);
 		
-		EventDay[] eventDays = getEventDays(itemView.getEventDayPanel().getTableData());
-		ItemGroup[] itemGroups = getItemGroups(itemView.getItemGroupPanel().getTableData());
-		Item[] items = getItems(itemView.getItemPanel().getTableData());
+		EventDay[] eventDays = getEventDays(menuView.getEventDayPanel().getTableData());
+		ItemGroup[] itemGroups = getItemGroups(menuView.getItemGroupPanel().getTableData());
+		Item[] items = getItems(menuView.getItemPanel().getTableData());
 
 		ModelManager.getECBManager().save(
 				application.getEvent(), 
@@ -323,7 +323,7 @@ public class MenuController implements ActionListener, PropertyChangeListener {
 	public void propertyChange(PropertyChangeEvent evt) {
 		try {
 			ConfigureTableView source = (ConfigureTableView) evt.getSource();
-			if (itemView.getItemGroupPanel() == source) {
+			if (menuView.getItemGroupPanel() == source) {
 				List<ValueBean> values = new ArrayList<ValueBean>();
 				for (ConfigureTableRow tableRow : source.getTableData()) {
 					if (tableRow.getKey() <= 0) {
@@ -336,7 +336,7 @@ public class MenuController implements ActionListener, PropertyChangeListener {
 					values.add(new ValueBean(tableRow.getKey(),
 							(String) tableRow.getValue(0)));
 				}
-				itemView.getItemPanel().updateCombo(values);
+				//menuView.getItemPanel().updateCombo(values);
 			}
 		} catch (AppException e) {
 			application.showError(e);

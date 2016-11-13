@@ -82,7 +82,6 @@ public class ConfigureTableView extends RowsPanel {
 		configureTable = new JTable(configureTableModel);
 		configureTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		configureTable.setRowHeight(20);
-
 		for (int i = 0; i < types.size(); i++) {
 			TableColumn comboColumn = configureTable.getColumnModel()
 					.getColumn(i);
@@ -118,6 +117,7 @@ public class ConfigureTableView extends RowsPanel {
 
 		this.getContentPane().add(titlePanel);
 		this.getContentPane().add(new JScrollPane(configureTable));
+		addPropertyChangeListener(application.getMenuPanel().getController());
 	}
 
 	private int getColumsCount() {

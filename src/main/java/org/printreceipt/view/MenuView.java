@@ -329,6 +329,10 @@ public class MenuView extends RowsPanel {
 	public Application getApplication() {
 		return this.application;
 	}
+	
+	public MenuController getController() {
+		return controller;
+	}
 
 	public Integer getPaperSize() {
 		return (Integer)((ValueBean) paperSizeCombobox.getSelectedItem()).getId();
