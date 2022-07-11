@@ -11,14 +11,14 @@
 2. [Download latest release](https://github.com/michelelazzeri/print-receipt/releases/latest)
 3. Double click on jar file
 
-Print Receipt! is very simple to use. Watch the Video Tutorial:
+Print Receipt! is very simple to use. Watch the Video Tutorial:-
 
 [![Watch the Video Tutorial](http://img.youtube.com/vi/SpaAheKS8d0/0.jpg)](http://www.youtube.com/watch?v=SpaAheKS8d0)
 
 ## Tested Printer
 print-receipt is tested on this products
  
-* [Epson TM-T81](https://www.google.it/?ie=UTF-8#q=Epson+thermal+printer+TM-T81)
+* [Epson TM-T81](https://download.epson-biz.com/modules/pos/index.php?page=single_soft&cid=6872&scat=31&pcat=3)
 * [USB POS Bill Printer Mini](https://www.google.it/?ie=UTF-8#q=USB+POS+Bill+Printer+Mini)
 
 ## Requirement
