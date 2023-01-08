@@ -1,6 +1,6 @@
 # Print Receipt: a POS Application for print receipt
 
-[Print Receipt](https://michelelazzeri.github.io/print-receipt/index.en.html) is an Open Source POS application for print receipt and manage event billing and stock    
+[Print Receipt](https://heyteacher.github.io/print-receipt/index.en.html) is an Open Source POS application for print receipt and manage event billing and stock    
 
 * Run anywhere (require a Java runtime [see Requirements](#requirement))
 * Support any king of printer recognized by your PC (there are some [Tested Printer](#tested-printer)) 
@@ -8,7 +8,7 @@
 ## Usage
 
 1. Download and install [Java](https://java.com/en/download/)
-2. [Download latest release](https://github.com/michelelazzeri/print-receipt/releases/latest)
+2. [Download latest release](https://github.com/heyteacher/print-receipt/releases/latest)
 3. Double click on jar file
 
 Print Receipt! is very simple to use. Watch the Video Tutorial:-
@@ -35,6 +35,6 @@ You can contribute in many ways:
   * [Star Micronics TSP600](https://www.google.it/?ie=UTF-8#q=star+tsp600+usb)
   * [Bixolon Samsung SRP-350II USB](https://www.google.it/?ie=UTF-8#q=samsung+srp-350+usb)
 
-* if you find a bug or suggest new features, [create a issue](https://github.com/michelelazzeri/print-receipt/issues/new) 
+* if you find a bug or suggest new features, [create a issue](https://github.com/heyteacher/print-receipt/issues/new) 
 
-* add a translation starting from [messages template](https://github.com/michelelazzeri/print-receipt/blob/master/src/main/java/org/printreceipt/messages_lang.properties)
+* add a translation starting from [messages template](https://github.com/heyteacher/print-receipt/blob/master/src/main/java/org/printreceipt/messages_lang.properties)
